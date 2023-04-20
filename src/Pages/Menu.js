@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import MenuCard from "../Component/MenuCard";
-
+import { REACT_APP_API_KEY , REACT_APP_API_HOST } from "../ENV/env";
 
 
 const Menu = () => {
@@ -18,8 +18,8 @@ const Menu = () => {
         const options = {
             method: 'GET',
             headers: {
-                'X-RapidAPI-Key': 'd1c420eed9msh3396b6a33ffc3c6p191b0fjsncbfc5d9cdc11',
-                'X-RapidAPI-Host': 'pizza-and-desserts.p.rapidapi.com'
+                'X-RapidAPI-Key':  REACT_APP_API_KEY,
+                'X-RapidAPI-Host':  REACT_APP_API_HOST
             }
         };
 
@@ -36,8 +36,8 @@ const Menu = () => {
         const options = {
             method: 'GET',
             headers: {
-                'X-RapidAPI-Key': 'd1c420eed9msh3396b6a33ffc3c6p191b0fjsncbfc5d9cdc11',
-                'X-RapidAPI-Host': 'pizza-and-desserts.p.rapidapi.com'
+                'X-RapidAPI-Key': REACT_APP_API_KEY,
+                'X-RapidAPI-Host':  REACT_APP_API_HOST
             }
         };
 

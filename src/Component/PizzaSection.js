@@ -3,6 +3,8 @@ import PizzaCard from "./PizzaCards";
 import { useInView } from 'react-intersection-observer';
 import Divider from "./Divider";
 import '../App.css'
+import { REACT_APP_API_KEY , REACT_APP_API_HOST } from "../ENV/env";
+
 
 
 const PizzaSection = () => {
@@ -20,8 +22,8 @@ const PizzaSection = () => {
         const options = {
             method: 'GET',
             headers: {
-                'X-RapidAPI-Key': 'd1c420eed9msh3396b6a33ffc3c6p191b0fjsncbfc5d9cdc11',
-                'X-RapidAPI-Host': 'pizza-and-desserts.p.rapidapi.com'
+                'X-RapidAPI-Key': REACT_APP_API_KEY,
+                'X-RapidAPI-Host': REACT_APP_API_HOST
             }
         };
 
