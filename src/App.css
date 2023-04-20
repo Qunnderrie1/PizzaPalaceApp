@@ -1,38 +1,456 @@
+body{
+    margin: 0;
+    padding:0;
+    font-family: 'Open Sans', sans-serif;
+    background-color: #fff;
+
+
+}
+
+.dividerContainer{
+    margin-top: 80px;
+}
+.divider1{
+    width: 100%;
+    background-color: red;
+    height: 2px;
+    margin: 10px;
+
+}
+.divider2{
+    width: 100%;
+    background-color: red;
+    height: 4px;
+    margin: 10px;
+}
+
+
 .App {
-  text-align: center;
+
+text-align: center;
+color: black;
+margin: 0 auto;
+padding: 10px;
+max-width: 800px;
+
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.navBar{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 20px;
+
+
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.navBar li{
+    position: relative;
+    transition: 0.3s;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.navBar .nav-items{
+    display: flex;
+    flex-direction: row;
+    gap:20px;
+
 }
 
-.App-link {
-  color: #61dafb;
+.navBar a{
+    color: black;
+    text-decoration: none;
+
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.navBar li::after{
+    content: '';
+    width: 0%;
+    height: 5px;
+    background-color: red;
+    display: inline-block;
+    
+}
+
+.navBar li::after:hover{
+
+    width: 100%;
+
+}
+
+
+.logo{
+    display: flex;
+    align-items: center;
+    gap:5px;
+}
+
+.logo img{
+    width: 20px;
+    height: 20px;
+}
+.logo p {
+    padding: 0;
+    margin: 0;
+}
+
+.headerContainer{
+    background-image: url('./Images/pizza.png');
+    background-clip: border-box;
+    background-size:cover;
+    background-repeat:no-repeat;
+    height: fit-content;
+    width: 100%;
+    border-radius: 8px;
+    box-shadow: 2px 2px 20px #727272;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin-top: 100px;
+}
+
+.headerContainer h2{
+    color: rgb(255, 255, 255);
+    font-size: 50px;
+    font-weight: 900;
+    
+}
+.headerContainer h1{
+    color: rgb(255, 255, 255);
+    font-size: 50px;
+    font-weight: 900;
+}
+
+.headerContainer .header-left p {
+    color: white;
+}
+.header-left  button{
+    color:white;
+    font-weight: bold;
+    border: 2px solid white;
+    padding: 10px 20px;
+    background-color: red;
+    margin-top: 20px;
+}
+
+.header-left{
+    text-align: left;
+    padding: 20px;
+  
+}
+
+.header-left p {
+    font-size: 12px;
+    margin-top: 10px;
+}
+.header-right p{
+    font-family: 'Roboto', sans-serif;
+    font-size: 50px;
+    padding: 10px 20px;
+    font-weight: bold;
+    color: white;
+
+}
+
+.header-right{
+    width: fit-content;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+span{
+    display: block;
+}
+
+.pizza1 img{
+    width: 400px;
+    
+}
+
+.headerContainer img{
+    object-fit: cover;
+    border-radius: 8px;
+    box-shadow: 2px 2px 20px rgb(0, 0, 0, 0.5);
+}
+
+.logo{
+    color: red;
+    font-weight: 900;
+}
+
+li{
+    list-style: none;
+}
+
+.foodContainer h1{
+    font-size: 20px;
+}
+
+.foodContainer .card-body p:first-child{
+    font-size: 16px;
+}
+
+.foodContainer{
+    position: relative;
+    padding: 10px;
+    display: flex;
+    width: fit-content;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    border: #ffffff solid 2px;
+    box-shadow: 2px 2px 20px rgb(0, 0, 0, 0.4);
+    border-radius: 8px;
+    background-color: white;
+}
+
+hr{
+    width: 200px;
+}
+.foodContainer img{
+    width: 200px;
+    height: 100%;
+    object-fit: cover;
+    
+}
+
+.foodContainer p:first-child{
+    color: black;
+    font-size: 20px;
+    font-weight: bold;
+
+}
+
+.foodContainer p:nth-child(2){
+    color: black;
+    font-size: 14px;
+    font-weight: light;
+
+}
+.pizzaPrice{
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    background-color: red;
+    color: white;
+    padding: 12px;
+    font-size: 16px;
+    border-radius: 50%;
+    width: 35px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 35px;
+    border: rgb(153, 0, 0) solid 1px;
+
+}
+.foodCardsContainer{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: center;
+    gap: 20px;
+    width: fit-content;
+
+
+}
+
+.searchFormContainer{
+    max-width: 300px;
+    margin: 100px auto;
+}
+
+.searchBtn{
+    background-color: red;
+    color:white;
+    border: none;
+    font-weight: bold;
+    display: block;
+    margin: 20px auto;
+    width: 100%;
+
+}
+
+
+form p {
+   text-align: left;
+   font-weight: bold;
+
+}
+
+.vegPizzaContainer{
+    margin-top: 40px;
+}
+.vegLinkContainer{
+    display: flex;
+    align-items: center;
+    gap:20px;
+}
+
+.vegLinkContainer a{
+    text-decoration: none;
+    color: rgb(211, 80, 80);
+
+}
+
+.vegLinkContainer p {
+    font-size: 40px;
+    font-weight: 900;
+}
+
+
+.vegContainer{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: left;
+    gap: 20px;
+}
+
+.cheeseyContainer{
+    margin-top: 50px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 20px;
+}
+
+.card{
+    width: fit-content;
+}
+
+.card img{
+    width: 200px;
+    height: 150px;
+}
+
+.popularCards{
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    gap: 20px;
+}
+
+.popularPizzas h2{
+    text-align: left;
+    font-size: 40px;
+    font-weight: 900;
+    margin-top: 40px;
+
+}
+
+.dessertContainer {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    gap: 20px;
+    transition: 0.3s;
+}
+
+.dessertCards .card p:nth-child(2){
+    font-size: 12px;
+
+}
+
+.dessertContainerAnimate{
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    gap: 20px;
+    animation: moveSection 1s ease-in-out ;
+}
+
+.menuPageContainer{
+    width: 100%;
+}
+.menuContainer {
+    margin-top: 100px;
+    text-align: left;
+    width: 100%;
+}
+
+.menuTitle p {
+    font-weight: 900;
+    font-size: 20px;
+    margin-top: 20px;
+}
+
+.menu{
+    display: flex;
+    flex-direction: row;
+    justify-content: left;
+    text-align: left;
+    margin-top: 50px;
+    width: 100%;
+}
+
+.bottomMenu{
+    display: flex;
+    margin-top: 40px;
+
+}
+.menu img{
+    width: 150px;
+    border-radius: 8px;
+}
+
+.menu-body h6{
+    font-weight: bold;
+}
+
+.menu-body{
+    width: 100%;
+    padding: 0px 20px;
+}
+
+.menu-body p {
+    font-size: 14px;
+}
+
+.menuContainer h4{
+    font-weight: 900;
+    text-align: left;
+    font-size: 40px;
+
+}
+
+hr{
+    width: 100%;
+    margin-top: 20px;
+}
+
+.title-price{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+}
+
+footer{
+
+    height: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.showMoreBtn{
+    border: none;
+    color: red;
+    text-align: center;
+    margin: 0px auto;
+    background-color: #fff;
+}
+
+
+
+@keyframes moveSection {
+
+    0% {
+        transform: translateX(-400px);
+    }
+    100%{
+        transform: translateX(0px);
+    }
+    
 }
