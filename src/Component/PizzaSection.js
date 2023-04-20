@@ -3,7 +3,7 @@ import PizzaCard from "./PizzaCards";
 import { useInView } from 'react-intersection-observer';
 import Divider from "./Divider";
 import '../App.css'
-import { REACT_APP_API_KEY , REACT_APP_API_HOST } from "../ENV/env";
+import { REACT_APP_API_KEY , REACT_APP_API_HOST } from "../env";
 
 
 
