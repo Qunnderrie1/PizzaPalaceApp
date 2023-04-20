@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/PizzaPalaceApp/static/css/main.81c65b93.css",
+    "main.js": "/PizzaPalaceApp/static/js/main.cfffdb60.js",
+    "static/media/pizza.png": "/PizzaPalaceApp/static/media/pizza.910d5be3f53b24dfddb4.png",
+    "static/media/pizzaBackground.jpg": "/PizzaPalaceApp/static/media/pizzaBackground.b580493b5e7b6f077f91.jpg",
+    "index.html": "/PizzaPalaceApp/index.html",
+    "main.81c65b93.css.map": "/PizzaPalaceApp/static/css/main.81c65b93.css.map",
+    "main.cfffdb60.js.map": "/PizzaPalaceApp/static/js/main.cfffdb60.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.81c65b93.css",
+    "static/js/main.cfffdb60.js"
+  ]
+}
