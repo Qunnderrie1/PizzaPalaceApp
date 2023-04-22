@@ -11,7 +11,7 @@ const Menu = () => {
     const [addMore , setAddMore ] = useState(false);
     const [showText  , setShowText] = useState('Show More');
     const [moreItems , setMoreItems ] = useState([]);
-    const [menuitems , setMenuItems ] = useState([])
+
 
 
     const PizzaMenu = () => {
@@ -107,7 +107,14 @@ const Menu = () => {
             }
 
             {
-                addMore
+               addMore ? moreItems.map((item ) => {
+                return <MenuCard 
+                img={item.img} 
+                title={item.name}
+                 description={item.description}
+                 price={item.price}
+                  />
+               }) : <></>
 
             }
 

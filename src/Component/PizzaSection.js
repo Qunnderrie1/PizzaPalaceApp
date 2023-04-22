@@ -1,9 +1,10 @@
-import React, { useEffect, useState , useRef } from "react";
+import React, { useEffect, useState , createContext  } from "react";
 import PizzaCard from "./PizzaCards";
 import { useInView } from 'react-intersection-observer';
 import Divider from "./Divider";
 import '../App.css'
 import { REACT_APP_API_KEY , REACT_APP_API_HOST } from "../env";
+import { useNavigate } from "react-router-dom";
 
 
 
@@ -15,9 +16,12 @@ const PizzaSection = () => {
     const [pizza, setPizza] = useState([]);
     const [dessert, setDessert] = useState([]);
 
-    console.log(myElement)
+    const [pizzaChoice , setPizzaChoice ] = useState('')
 
 
+    const card  = useNavigate();
+
+    
     const getDessert = () => {
         const options = {
             method: 'GET',
@@ -62,6 +66,12 @@ const PizzaSection = () => {
     useEffect(getDessert, []);
 
 
+    const userChoice = (e) => {
+
+        setPizzaChoice(e.currentTarget.innerText)
+
+    }
+
 
     return (
 
@@ -75,7 +85,7 @@ const PizzaSection = () => {
 
                     {
                         newVeggiePizza.map((item, i) => {
-                            return <PizzaCard name={item.name} img={item.img} />
+                            return <PizzaCard  handleCard={userChoice} name={item.name} img={item.img} />
                         })
                     }
 
@@ -91,7 +101,7 @@ const PizzaSection = () => {
                 <div className="popularCards">
                     {
                         newVeggiePizza ? newVeggiePizza.map((item, i) => {
-                            return <PizzaCard name={item.name} img={item.img} />
+                            return <PizzaCard handleCard={userChoice} name={item.name} img={item.img} />
                         }) : <div class="text-center">
                             <div class="spinner-border" role="status">
                                 <span class="visually-hidden">Loading...</span>
@@ -108,13 +118,13 @@ const PizzaSection = () => {
 
             <div className="meatLoversContainer container">
                 <div className="vegLinkContainer">
-                    <p>Meat Lovers</p>
+                    <h2>Meat Lovers</h2>
                 </div>
                 <div className="vegContainer">
 
                     {
                         newVeggiePizza.map((item, i) => {
-                            return <PizzaCard name={item.name} img={item.img} />
+                            return <PizzaCard  handleCard={userChoice} name={item.name} img={item.img} />
                         })
                     }
 
@@ -123,9 +133,9 @@ const PizzaSection = () => {
 
             <Divider />
 
-            <div ref={myRef} className={myElement ? "dessertContainer container " : "dessertContainerAnimate"}>
+            <div ref={myRef} className={myElement ? "dessertContainer container " : "dessertContainerAnimate container"}>
                 <div className="vegLinkContainer">
-                    <p>Try Our Desserts</p>
+                    <h2>Try Our Desserts</h2>
                 </div>
                 <div className="dessertContainer">
 

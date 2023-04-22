@@ -28,10 +28,6 @@ const SearchForm = () => {
     }
   
   
-  const handleChange = (e) => {
-    console.log(e.target.value)
-  }
-  
   const pizzaTypeHandler = () => {
   
     const newData = foodName.filter(item => item.description == pizzaType)

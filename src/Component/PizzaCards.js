@@ -4,10 +4,12 @@ import pizza from '../Images/pizza.png'
 
 
 
-const PizzaCard = ({ name, img , description }) => {
+const PizzaCard = ({ name, img , description , handleCard }) => {
+
+
     return (
 
-        <div className="dessertCards">
+        <div onClick={handleCard} className="dessertCards">
               <div class="card">
             <img src={img} class="card-img shadow-lg" alt="..." width="100%" />
                 <div class="card-body">
