@@ -3,10 +3,21 @@ import { Link } from 'react-router-dom';
 import logo from '../Images/logo.png';
 import cart from '../Images/cart.png'
 import Cart from "./Cart";
+import { useNavigate } from "react-router-dom";
 
 import '../App.css'
 
 const NavBar = () => {
+
+    const navigate = useNavigate();
+
+
+    const handleCart = () => {
+        navigate('/Cart')
+    }
+
+
+
     return (
         <div className="navBar container-fluid">
             <div className="navBarBackground container">
@@ -25,7 +36,7 @@ const NavBar = () => {
                 <Link to="/AdminLogin">Admin</Link>
                 </li>
                 <li>
-                    <Cart img={cart} />
+                    <Cart cartpage={handleCart} img={cart} />
                 </li>
             </ul>
 

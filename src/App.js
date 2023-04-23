@@ -10,6 +10,7 @@ import AddProduct from './Pages/AddProduct.js'
 import MobileMenu from './Component/MobileMenu';
 import AdminLogin from './Pages/AdminLogin';
 import HamburgerMenu from './Component/HamburgerMenu';
+import Cart from './Pages/ViewCart.js'
 
 
 function App() {
@@ -40,6 +41,7 @@ function App() {
         <Route path='/Menu' element={<Menu />} />
         <Route path='/AdminLogin' element={<AdminLogin />} />
         <Route path='/AddProduct' element={<AddProduct />} />
+        <Route path='/Cart' element={<Cart />} />
 
       </Routes>
       <Footer />

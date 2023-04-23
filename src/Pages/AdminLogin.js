@@ -11,8 +11,8 @@ const AdminLogin = () => {
     const login = useNavigate();
 
 
-    const user = "Dog@gmail.com";
-    const userPassword = "Dog"
+    const user = "admin";
+    const userPassword = "admin"
 
 
 

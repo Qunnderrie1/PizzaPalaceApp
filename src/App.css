@@ -123,13 +123,7 @@ width: 100%;
     font-weight: 800;
 }
 
-.cartContainer{
-    display: flex;
-    gap:10px;
-}
-.cartContainer p {
-    font-weight: bold;
-}
+
 
 /* ============= Header  ===========  */
 
@@ -621,6 +615,75 @@ table tr td:hover{
 .productListContainer{
     width: 100%;
 }
+
+
+
+/*==================== Cart Page  ========================= */
+
+.cartContainer img{
+    height: 100%;
+    width: 100%;
+}
+
+.cartPage{
+
+    margin-top: 100px;
+    max-width: 600px;
+}
+
+.cartPage h1{
+    font-weight:900;
+    text-align: left;
+}
+
+.customerOrdeContainer img{
+    border-radius: 8px;
+    display: flex;
+
+}
+.customerOrdeContainer{
+    margin-top: 100px;
+}
+
+.customerOrdeContainer .row{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    text-align: end;
+}
+.customerOrdeContainer button{
+    background-color: white;
+    border: 1px solid var(--btnColor);
+    color: var(--textColor);
+    padding: 5px 20px;
+    transition: 0.3s;
+}
+
+.customerOrdeContainer button:hover{
+    background-color: var(--btnColor);
+    border: 1px solid white;
+    color: white;
+    padding: 5px 20px;
+    transition: 0.3s;
+}
+
+.cartContainer{
+    display: flex;
+    gap:10px;
+}
+.cartContainer p {
+    font-weight: bold;
+}
+
+.cartContainer img{
+    cursor: pointer;
+}
+
+
+
+
+
 
 /*==================== Footer  ========================= */
 
