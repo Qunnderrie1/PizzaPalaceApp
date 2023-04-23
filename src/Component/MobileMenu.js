@@ -1,7 +1,17 @@
 import React from "react";
 import { Link } from 'react-router-dom';
+import Cart from "./Cart";
+import { useNavigate } from "react-router-dom";
+import mobileCart from '../Images/shopcart.png'
 
 const MobileMenu = () => {
+
+    const navigate = useNavigate();
+
+    const handleCart = () => {
+        navigate('/Cart')
+    }
+
 
 
     return (
@@ -19,6 +29,9 @@ const MobileMenu = () => {
             <Link to="/AdminLogin">Admin</Link>
             </li>
             <hr />
+            <li>
+                    <Cart cartpage={handleCart} img={mobileCart} />
+            </li>
         </ul>
         </div>
     )

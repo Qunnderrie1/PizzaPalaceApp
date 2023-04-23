@@ -6,6 +6,7 @@ import '../App.css'
 import { REACT_APP_API_KEY , REACT_APP_API_HOST } from "../env";
 import { useNavigate } from "react-router-dom";
 import PizzaBoxModel from "./PizzaBoxModel";
+import orders from '../Helper/orderData.js'
 
 
 
@@ -15,6 +16,7 @@ const PizzaSection = () => {
 
     const [pizza, setPizza] = useState([]);
     const [dessert, setDessert] = useState([]);
+    const [pizzaPrice , setPizzaPrice ] = useState('')
 
     const [pizzaChoice , setPizzaChoice ] = useState('')
 
@@ -70,16 +72,20 @@ const PizzaSection = () => {
     const userChoice = (e) => {
     
         setPizzaChoice(e.currentTarget.innerText)
+        console.log(e)
+        alert("Your item has been added to the cart.")
+        orders.push({
+            name: pizzaChoice,
+            price: pizzaPrice
+        })
 
-        console.log(e.target.currentSrc)
-    
+
     }
-
 
     return (
 
         <div className="pizzaSection">
-          <PizzaBoxModel />
+          <PizzaBoxModel name={pizzaChoice} />
             <div className="vegPizzaContainer container">
 
             
@@ -90,7 +96,7 @@ const PizzaSection = () => {
 
                     {
                         newVeggiePizza.map((item, i) => {
-                            return <PizzaCard  handleCard={userChoice} name={item.name} img={item.img} />
+                            return <PizzaCard handleCard={userChoice} name={item.name} img={item.img} />
                         })
                     }
 
@@ -106,7 +112,7 @@ const PizzaSection = () => {
                 <div className="popularCards">
                     {
                         newVeggiePizza ? newVeggiePizza.map((item, i) => {
-                            return <PizzaCard handleCard={userChoice} name={item.name} img={item.img} />
+                            return <PizzaCard addToOrder={userChoice}   name={item.name} img={item.img} />
                         }) : <div class="text-center">
                             <div class="spinner-border" role="status">
                                 <span class="visually-hidden">Loading...</span>
@@ -129,7 +135,7 @@ const PizzaSection = () => {
 
                     {
                         newVeggiePizza.map((item, i) => {
-                            return <PizzaCard  handleCard={userChoice} name={item.name} img={item.img} />
+                            return <PizzaCard addToOrder={userChoice} name={item.name} img={item.img} />
                         })
                     }
 
@@ -146,7 +152,7 @@ const PizzaSection = () => {
 
                     {
                         dessert.map((item, i) => {
-                            return <PizzaCard name={item.name} img={item.img} />
+                            return <PizzaCard addToOrder={userChoice} name={item.name} img={item.img} />
                         })
                     }
 

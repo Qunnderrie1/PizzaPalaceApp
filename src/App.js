@@ -10,7 +10,8 @@ import AddProduct from './Pages/AddProduct.js'
 import MobileMenu from './Component/MobileMenu';
 import AdminLogin from './Pages/AdminLogin';
 import HamburgerMenu from './Component/HamburgerMenu';
-import Cart from './Pages/ViewCart.js'
+import Cart from './Pages/ViewCart.js';
+
 
 
 function App() {

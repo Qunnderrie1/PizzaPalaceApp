@@ -15,6 +15,17 @@ body{
 
 }
 
+.pizzaBoxModel{
+    display: none;
+}
+
+
+.pizzaBoxModel.active{
+    width: 100%;
+    height: 100%;
+    background-color: #000;
+}
+
 .pizzaSection{
     width: 100%;
 }
@@ -805,8 +816,24 @@ footer p{
 
     .mobileMenu{
         animation: closeMobileMenu 1s  ;
-      
-    
+    }
+
+    .nav-items{
+        color: white;
+
+    }
+    .nav-items{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .nav-items img{
+        width: 25px;
+        text-align: center;
+        color: whtie;
+        stroke: white 2px ;
     }
 
     .mobileMenu ul {

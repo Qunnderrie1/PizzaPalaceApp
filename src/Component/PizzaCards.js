@@ -4,7 +4,7 @@ import '../App.css'
 
 
 
-const PizzaCard = ({ name, img , description , handleCard }) => {
+const PizzaCard = ({ name, img , description , handleCard, addToOrder }) => {
 
 
     return (
@@ -15,7 +15,7 @@ const PizzaCard = ({ name, img , description , handleCard }) => {
                 <div class="card-body">
                     <p class="card-text">{name}</p>
                     <p>{description}</p>
-                    <button>ADD TO ORDER</button>
+                    <button value={name} onClick={addToOrder}>ADD TO ORDER</button>
                 </div>
         </div>
 
