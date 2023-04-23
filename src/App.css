@@ -50,6 +50,7 @@ margin: 0px auto;
 padding: 10px;
 width: 100%;
 
+
 }
 
 
@@ -713,6 +714,7 @@ footer p{
     }
     .App{
         position: relative;
+        overflow-x: hidden ;
     }
     
     .nav-items hr{
