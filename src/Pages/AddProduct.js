@@ -54,7 +54,7 @@ const Login = () => {
 
 
     return (
-        <div className="addProductContainer container-fluid">
+        <div className="productListContainer container">
             <h2>List Of Products </h2>
             <PizzaTable />
         </div>

@@ -15,6 +15,9 @@ const MenuCard = ({ img, title, description, price }) => {
                         <p>${price}.99</p>
                     </div>
                     <p>{description}</p>
+                    <div className="menuBottomContainer">
+                    <button>ADD TO ORDER</button>
+                    </div>
                 </div>
 
             </div>

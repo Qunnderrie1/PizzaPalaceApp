@@ -5,6 +5,7 @@ import Divider from "./Divider";
 import '../App.css'
 import { REACT_APP_API_KEY , REACT_APP_API_HOST } from "../env";
 import { useNavigate } from "react-router-dom";
+import PizzaBoxModel from "./PizzaBoxModel";
 
 
 
@@ -12,7 +13,6 @@ const PizzaSection = () => {
 
     const { ref: myRef , inView: myElement} = useInView();
 
-    const [vegPizza, setVegPizza] = useState([])
     const [pizza, setPizza] = useState([]);
     const [dessert, setDessert] = useState([]);
 
@@ -58,6 +58,7 @@ const PizzaSection = () => {
             .catch(err => console.error(err));
     }
 
+    // Get Veggie Pizza From API List
     const newVeggiePizza = pizza.filter((item) => item.veg == true)
         .filter((item) => item.price > 7)
 
@@ -67,17 +68,21 @@ const PizzaSection = () => {
 
 
     const userChoice = (e) => {
-
+    
         setPizzaChoice(e.currentTarget.innerText)
 
+        console.log(e.target.currentSrc)
+    
     }
 
 
     return (
 
-        <>
-        
+        <div className="pizzaSection">
+          <PizzaBoxModel />
             <div className="vegPizzaContainer container">
+
+            
                 <div className="vegLinkContainer">
                     <p>Veggie Pizza</p>
                 </div>
@@ -133,7 +138,7 @@ const PizzaSection = () => {
 
             <Divider />
 
-            <div ref={myRef} className={myElement ? "dessertContainer container " : "dessertContainerAnimate container"}>
+            <div ref={myRef} className={myElement ? "dessertContainer active container " : "dessertContainer container"}>
                 <div className="vegLinkContainer">
                     <h2>Try Our Desserts</h2>
                 </div>
@@ -151,7 +156,7 @@ const PizzaSection = () => {
 
 
 
-        </>
+        </div>
     )
 }
 

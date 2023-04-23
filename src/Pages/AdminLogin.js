@@ -1,7 +1,7 @@
 import React, { useState  } from "react";
 import '../App.css'
 import { useNavigate } from "react-router-dom";
-
+import logo from '../Images/pizzaLogo.png';
 
 const AdminLogin = () => {
 
@@ -35,6 +35,10 @@ const AdminLogin = () => {
 
     return (
         <div className="adminContainer">
+               <div className="logo">
+                <img src={logo} width="25px" height="25px"/>
+            <p className="logo">Pizza Palace</p>
+            </div>
             <h2>Hello, Admin</h2>
             <p>Login to view all products</p>
             <div className="adminForm">

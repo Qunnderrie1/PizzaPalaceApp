@@ -55,7 +55,7 @@ const PizzaTable = ({id , name , price , description}) => {
 
 
         <div className="pizzaTableContainer container">
-            <table>
+            <table className="container" width="100%">
                 <thead>
                 <tr>
                     <th>ID</th>
@@ -75,6 +75,7 @@ const PizzaTable = ({id , name , price , description}) => {
                                     <td>${item.price}.99</td>
                                     <td>{item.description}</td>
                                     <td>{item.quantity}</td>
+                                    <td className="tableDivider"></td>
                                 </tr>
                             })
                         }
@@ -86,6 +87,7 @@ const PizzaTable = ({id , name , price , description}) => {
                                     <td>${item.price}.99</td>
                                     <td>{item.description}</td>
                                     <td>{item.quantity}</td>
+
 
                                 </tr>
                             })

@@ -1,26 +1,41 @@
+:root{
+
+    --btnColor: rgb(110, 16, 16);
+    --dividerColor: rgb(110, 16, 16);
+    --textColor: rgb(110, 16, 16);
+
+}
+
+
 body{
     margin: 0;
     padding:0;
     font-family: 'Open Sans', sans-serif;
     background-color: #fff;
 
-
 }
+
+.pizzaSection{
+    width: 100%;
+}
+
 
 .dividerContainer{
     margin-top: 80px;
 }
 
+/* ============= Divider  ===========  */
+
 .divider1{
     width: 100%;
-    background-color: red;
+    background-color: var(--dividerColor);
     height: 2px;
     margin: 10px;
 
 }
 .divider2{
     width: 100%;
-    background-color: red;
+    background-color:  var(--dividerColor);
     height: 4px;
     margin: 10px;
 }
@@ -28,6 +43,7 @@ body{
 
 
 .App {
+
 text-align: center;
 color: black;
 margin: 0px auto;
@@ -36,24 +52,17 @@ width: 100%;
 
 }
 
+
 .mobileMenu {
     display: none;
 }
 
+/* ============= Navbar  ===========  */
 .navBarBackground{
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     padding: 20px 20px;
-}
-
-.cover{
-    background-color: rgb(0, 0, 0, 0.4);
-    width: 100%;
-    position: absolute;
-    height: 100%;
-    z-index: -1;
-    
 }
 
 .navBar{
@@ -81,14 +90,18 @@ width: 100%;
     text-decoration: none;
     font-weight: 400;
     transition: 0.3s;
+    padding:4px 8px;
+    border-right: 1px solid rgb(110, 16, 16);
+    border-left: 1px solid rgb(110, 16, 16);
     
 
 }
 
 .navBar li a:hover{
     padding:4px 8px;
-    background-color: #b30404;
+    background-color: rgb(110, 16, 16);
     color: white;
+    border-right: 1px solid rgb(110, 16, 16);
 }
 
 
@@ -105,8 +118,27 @@ width: 100%;
 .logo p {
     padding: 0;
     margin: 0;
-    color: black;
+    color: var(--textColor);
     font-weight: 800;
+}
+
+.cartContainer{
+    display: flex;
+    gap:10px;
+}
+.cartContainer p {
+    font-weight: bold;
+}
+
+/* ============= Header  ===========  */
+
+.cover{
+    background-color: rgb(0, 0, 0, 0.4);
+    width: 100%;
+    position: absolute;
+    height: 100%;
+    z-index: -1;
+    
 }
 
 .headerContainer{
@@ -132,7 +164,7 @@ width: 100%;
     font-size: 80px;
     font-weight: 900;
     text-shadow: 2px 2px 20px rgb(0, 0, 0, 0.5);
-    -webkit-text-stroke: 2px #b30404;
+    -webkit-text-stroke: 2px rgb(110, 16, 16);
 
     
 }
@@ -150,13 +182,20 @@ width: 100%;
     font-weight: bold;
     border: 2px solid white;
     padding: 10px 20px;
-    background-color: red;
+    background-color: var(--btnColor);
     margin-top: 20px;
+    transition: 0.3s ease-in-out;
 }
 
+.header-left button:hover{
+    background-color: white;
+    color: rgb(110, 16, 16);
+    border: 2px solid rgb(110, 16, 16);;
+}
 .header-left{
     text-align: left;
     padding: 20px;
+    animation: moveHeader 1.5s;
   
 }
 
@@ -189,6 +228,11 @@ li{
     list-style: none;
 }
 
+
+
+/* ============= Pizza Section  ===========  */
+
+
 .foodContainer h1{
     font-size: 20px;
 }
@@ -211,9 +255,7 @@ li{
     background-color: white;
 }
 
-hr{
-    width: 200px;
-}
+
 .foodContainer img{
     width: 200px;
     height: 100%;
@@ -268,31 +310,10 @@ hr{
     transition: 0.3s;
 }
 
-.card:hover{
-    transform: scale(1.1);
-}
 
 .searchFormContainer{
     max-width: 300px;
     margin: 100px auto;
-}
-
-.searchBtn{
-    background-color: red;
-    color:white;
-    border: none;
-    font-weight: bold;
-    display: block;
-    margin: 20px auto;
-    width: 100%;
-
-}
-
-
-form p {
-   text-align: left;
-   font-weight: bold;
-
 }
 
 .vegPizzaContainer{
@@ -377,18 +398,28 @@ h2{
     
 }
 
+.dessertCards button{
+    background-color: white;
+    color: var(--textColor);
+    border: 1px solid var(--btnColor);
+}
+
 .dessertCards .card p:nth-child(2){
     font-size: 12px;
 
 }
 
-.dessertContainerAnimate{
+.dessertContainer .active{
     display: flex;
     flex-wrap: wrap;
     width: 100%;
     gap: 20px;
-    animation: moveSection 1s ease-in-out ;
+    animation: moveSection 1s ;
 }
+
+/* ============= Menu Section  ===========  */
+
+
 
 .menuPageContainer{
     width: 100%;
@@ -396,7 +427,7 @@ h2{
 .menuContainer {
     margin-top: 100px;
     text-align: left;
-    width: 100%;
+    max-width: 700px;
 }
 
 .menuTitle p {
@@ -437,14 +468,64 @@ h2{
     font-size: 14px;
 }
 
+.title-price p{
+    color: white;
+    padding: 4px;
+    border-radius: 4px;
+    background-color: var(--textColor);
+
+}
 .menuContainer h4{
     font-weight: 900;
     text-align: left;
     font-size: 40px;
 
 }
+.menuBottomContainer{
+    display: flex;
+    flex-direction: column;
+    justify-content: left;
+    align-items: flex-end;
 
-hr{
+
+}
+
+.menu-body button{
+    background-color: white;
+    border: 1px solid var(--btnColor);
+    color: var(--textColor);
+    padding: 4px 10px;
+    transition: 0.3s;
+}
+.menu-body button:hover{
+    background-color: var(--btnColor);
+    border: 1px solid white;
+    color: white;
+    padding: 4px 10px;
+}
+
+
+
+.card-body  button{
+    background-color: white;
+    border: 1px solid var(--btnColor);
+    color: var(--textColor);
+    padding: 4px 10px;
+    font-size: 16px;
+    transition: 0.3s ease-in-out;
+}
+.card-body button:hover{
+    background-color: var(--btnColor);
+    color: white;
+    padding: 4px 10px;
+
+}
+
+.card-body p:nth-child(1){
+    font-weight: bold;
+}
+
+.pizzaSection hr{
     width: 100%;
     margin-top: 20px;
 }
@@ -456,18 +537,9 @@ hr{
     width: 100%;
 }
 
-footer{
-
-    height: 200px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-}
-
 .showMoreBtn{
     border: none;
-    color: red;
+    color:  var(--btnColor);
     text-align: center;
     margin: 0px auto;
     background-color: #fff;
@@ -479,8 +551,10 @@ footer{
 }
 
 
+/*==================== Admin Container   ========================= */
+
 .adminContainer{
-    height: 50vh;
+    height: 80vh;
     text-align: center;
     display: flex;
     flex-direction: column;
@@ -489,41 +563,37 @@ footer{
 
 }
 
+
 .adminContainer h2{
     margin: 10px;
 }
-
-form{
+.adminContainer form{
     display: flex;
     flex-direction: column;
-    gap: 40px;
-    max-width: 500px;
-    margin: 40px auto;
+    gap: 20px;
+}
+.adminContainer .form-control{
+    border: 1px solid #808080;
 }
 
-.form-control{
-    border: 1px solid #acacac;
+.btn{
+    background-color: var(--btnColor);
+    border: 1px solid var(--btnColor);
+    transition: 0.3s;
 }
+.btn:hover{
+    background-color: white;
+    color: rgb(110, 16, 16);
+    border: 1px solid var(--btnColor);
 
-.addProductContainer{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    height: fit-content;
-    width: 100%;
 }
-
-.addProductContainer h2{
-    text-align: left;
-    margin: 40px 0px;
-}
-
 .pizzaTableContainer{
     width: 100%;
     margin: 100px auto;
 }
 
 table{
+  
     width: 100%;
     margin: auto;
     gap: 40px;
@@ -532,7 +602,7 @@ table thead tr th{
     text-align: center;
     margin: auto;
     text-align: center;
-    background-color: #e26262;
+    background-color: var(--btnColor);
     color: white;
     padding: 10px;
 }
@@ -547,49 +617,118 @@ table tr td{
 table tr td:hover{
     background-color: yellow;
 }
-
-
-
-
-@keyframes moveSection {
-
-    0% {
-        transform: translateX(-400px);
-    }
-    100%{
-        transform: translateX(0px);
-    }
-    
+.productListContainer{
+    width: 100%;
 }
 
-@keyframes openMobileMenu {
+/*==================== Footer  ========================= */
 
-    0% {
-        transform: translateX(-400px);
-    }
-    100%{
-        transform: translateX(0px);
-    }
-    
+footer{
+    height: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+footer p{
+    margin-top: 100px;
 }
 
 
-@media screen and (max-width: 576px) {
 
+/*==================== Mobile View   ========================= */
+
+
+@media screen and (max-width: 760px) {
+
+    table{
+        width: 100%;
+        border-collapse: collapse;
+    }
+    .pizzaTableContainer{
+        height: 100%;
+    }
+
+    .tableDivider{
+
+        height: 20px;
+        border: none;
+        margin: 4px;
+    }
+
+    table , thead , tbody , th ,td ,tr {
+        display: block;
+    }
+    thead tr{
+       display: none;
+    }
+
+    td{
+        border: none;
+        border-bottom: 1px solid #000;
+        position: relative;
+        padding-left: 50%;
+    }
+
+    td::before{
+        border: none;
+        top: 2px;
+        left: 6px;
+        width: 45%;
+        position: absolute;
+        padding-right: 10%;
+        white-space: nowrap;
+        background-color: var(--btnColor);
+        color: white;
+        padding: 0px;
+    }
+    td:nth-of-type(1):before 
+    { 
+        content: "ID";
+    }
+    td:nth-of-type(2):before 
+    { 
+        content: "Product Name";
+    }
+
+    td:nth-of-type(3):before 
+    { 
+        content: "Price";
+    }
+    td:nth-of-type(4):before 
+    { 
+        content: "Description";
+    }
+    td:nth-of-type(5):before 
+    { 
+        content: "Quantity";
+    }
+
+
+
+
+    .productListContainer{
+        max-width: 600px;
+    }
     .App{
         position: relative;
     }
     
+    .nav-items hr{
+        color: white;
+        width: 200px;
+    }
 
     .hamburgerMenuContainer{
         position: absolute;
         visibility: visible;
-        top: 0px;
+        top: 10px;
         right: 20px;
     }
 
     .mobileMenu.active{
-        background-color: rgb(136, 11, 11);
+        background-color: rgb(110, 16, 16);;
         width: 100%;
         height: fit-content;
         padding: 40px 0px;
@@ -681,6 +820,48 @@ table tr td:hover{
         row-gap: 20px;
         text-align: center;
     }
+    .adminContainer{
+        margin-top: 80px;
+    }
 
 
 }
+
+/*==================== Animation  ========================= */
+
+@keyframes moveSection {
+
+    0% {
+        transform: translateX(-400px);
+    }
+    100%{
+        transform: translateX(0px);
+    }
+    
+}
+
+@keyframes openMobileMenu {
+
+    0% {
+        transform: translateX(-400px);
+    }
+    100%{
+        transform: translateX(0px);
+    }
+    
+}
+
+@keyframes moveHeader {
+
+    0% {
+        transform: translateX(-50px);
+        opacity: 0;
+    }
+    100%{
+        transform: translateX(0px);
+        opacity: 100%;
+    }
+    
+}
+
+

@@ -8,7 +8,7 @@ const MobileMenu = () => {
         <div className="mobileMenu">
         <ul className="nav-items">
             <li>
-            <Link to="/">Home</Link>
+            <Link to="/PizzaPalaceApp">Home</Link>
             <hr />
             </li>
             <li>
@@ -16,8 +16,9 @@ const MobileMenu = () => {
             </li>
             <hr />
             <li>
-            <Link to="/Admin">Admin</Link>
+            <Link to="/AdminLogin">Admin</Link>
             </li>
+            <hr />
         </ul>
         </div>
     )

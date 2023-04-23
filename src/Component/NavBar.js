@@ -1,8 +1,9 @@
 import React from "react";
 import { Link } from 'react-router-dom';
-import logo from '../Images/pizzaLogo.png';
-import MobileMenu from "./MobileMenu";
-import HamburgerMenu from "./HamburgerMenu";
+import logo from '../Images/logo.png';
+import cart from '../Images/cart.png'
+import Cart from "./Cart";
+
 import '../App.css'
 
 const NavBar = () => {
@@ -15,13 +16,16 @@ const NavBar = () => {
             </div>
             <ul className="nav-items">
                 <li>
-                <Link to="/">Home</Link>
+                <Link to="/PizzaPalaceApp">Home</Link>
                 </li>
                 <li>
                 <Link to="/Menu">Menu</Link>
                 </li>
                 <li>
                 <Link to="/AdminLogin">Admin</Link>
+                </li>
+                <li>
+                    <Cart img={cart} />
                 </li>
             </ul>
 

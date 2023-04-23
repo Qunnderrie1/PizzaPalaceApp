@@ -36,7 +36,7 @@ function App() {
        <MobileMenu />
   
       <Routes>
-        <Route path='/' element={<Home />} />
+        <Route path='/PizzaPalaceApp' element={<Home />} />
         <Route path='/Menu' element={<Menu />} />
         <Route path='/AdminLogin' element={<AdminLogin />} />
         <Route path='/AddProduct' element={<AddProduct />} />

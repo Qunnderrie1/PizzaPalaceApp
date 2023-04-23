@@ -6,7 +6,7 @@ const Footer = () => {
     return (
         <footer>
             <hr />
-            <p>Pizza Palace</p>
+            <p>Designed & Developed Qunnderrie Snelling</p>
         </footer>
     )
 }
