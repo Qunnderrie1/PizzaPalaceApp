@@ -23,7 +23,6 @@ const Login = () => {
             .then(response => response.json())
             .then(data => setDessert(data))
             .catch(err => console.error(err));
-
     }
 
 

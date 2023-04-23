@@ -1,7 +1,7 @@
 import React, { useState  } from "react";
 import '../App.css'
 import { useNavigate } from "react-router-dom";
-import logo from '../Images/pizzaLogo.png';
+import logo from '../Images/logo.png';
 
 const AdminLogin = () => {
 

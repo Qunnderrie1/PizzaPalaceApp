@@ -475,6 +475,9 @@ h2{
 }
 
 .title-price p{
+    display: flex;
+    align-items: center;
+    justify-content: center;
     color: white;
     padding: 4px;
     border-radius: 4px;
@@ -714,8 +717,26 @@ footer p{
 
 /*==================== Mobile View   ========================= */
 
+@media screen and (max-width: 390px) {
+    .title-price h6{
+        font-size: 30px;
+     
+     }
+ 
+    
+}
+
+.menu-body{
+    padding: 0 0 0 5px;
+}
+
 
 @media screen and (max-width: 760px) {
+
+    .title-price h6{
+       font-size: 16px;
+    
+    }
 
     table{
         width: 100%;

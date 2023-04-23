@@ -36,7 +36,6 @@ function App() {
        <NavBar />
        <HamburgerMenu openClick={handleMenu} />
        <MobileMenu />
-  
       <Routes>
         <Route path='/PizzaPalaceApp' element={<Home />} />
         <Route path='/Menu' element={<Menu />} />
